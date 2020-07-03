@@ -8,7 +8,7 @@ url_list = [
     'https://4pda.ru'
 ]
 status_list = []
-req_count = 10
+req_count = 100
 for elem in url_list:
     for i in range(req_count):
         r = requests.get(elem)
