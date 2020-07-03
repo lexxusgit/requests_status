@@ -1,0 +1,18 @@
+import requests
+url_list = [
+    'https://skillbox.ru',
+    'https://www.jetbrains.com',
+    'https://www.youtube.com',
+    'https://mail.google.com',
+    'https://socialblade.com',
+    'https://4pda.ru'
+]
+status_list = []
+req_count = 10
+for elem in url_list:
+    for i in range(req_count):
+        r = requests.get(elem)
+        # print(f'Status code for {elem} in iteration {i} is {r.status_code}') # много строк забивающих экран
+        status_list.append(r.status_code)
+    # print(f'Status codes for {elem} is: {status_list}') # длинный список статус кодов
+    print(f'Different status codes for {elem} is: {set(status_list)}') # отличные друг от друга статус коды
